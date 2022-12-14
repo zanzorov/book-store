@@ -1,0 +1,108 @@
+.section_catalog {
+  padding: 9.6rem 0;
+}
+
+.container_heading {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.container_grid {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+  text-align: center;
+}
+
+.heading_secondary {
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+  text-align: center;
+}
+
+/* .grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid__4_cols {
+  grid-template-columns: repeat(4, 1fr);
+} */
+
+
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) 1200px / 16px = 75em */
+/**************************/
+
+@media (max-width: 75em) {
+  .container_grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+  .heading_secondary {
+    font-size: 3.6rem;
+  }
+}
+
+/***********my personal***************/
+/* BELOW 768px (Smaller tablets) 768px / 16px = 48em */
+/**************************/
+
+@media (max-width: 48em) {
+  .container_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/***********my personal***************/
+/* BELOW 592px (Even Smaller tablets) 592px / 16px = 37em */
+/**************************/
+
+@media (max-width: 37em) {
+  .container_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) 704px / 16px = 44em */
+/**************************/
+
+@media (max-width: 44em) {
+  .heading_secondary {
+    margin-bottom: 6.4rem;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) 544px / 16px = 34em */
+/**************************/
+
+@media (max-width: 34em) {
+  .container_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

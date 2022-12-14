@@ -1,0 +1,66 @@
+.item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1.5fr 1.5fr 4fr 1.5fr 1.5fr;
+  align-items: center;
+  /* column-gap: 4.8rem; */
+  /* align-items: center; */
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+}
+
+.item_img {
+  width: 40%;
+}
+.book_img {
+  width: 100%;
+}
+
+/* .item_info {
+} */
+
+.book_title {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.author {
+  font-size: 1.4rem;
+}
+
+.item_count {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.item_count span {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.minus,
+.plus {
+  color: #333;
+  cursor: pointer;
+  /* transition: all 0.3s; */
+}
+
+.minus:hover,
+.plus:hover {
+  color: #e67e22;
+}
+.minus:active,
+.plus:active {
+  transform: translateY(1px);
+}
+
+.item_price span {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}

@@ -1,0 +1,66 @@
+/* Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+
+.section_features {
+  padding: 4.8rem 0 3.2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.feature_box {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.feature_title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.2;
+}
+
+.feature_title span {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) 1200px / 16px = 75em */
+/**************************/
+
+@media (max-width: 75em) {
+  .feature_title {
+    font-size: 1.8rem;
+  }
+}
+
+/**********my personal****************/
+/* BELOW 800px (Tablets) 800px / 16px = 50em */
+/**************************/
+
+@media (max-width: 50em) {
+  .container {
+    display: grid;
+    column-gap: 9.6rem;
+    row-gap: 4.8rem;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) 544px / 16px = 34em */
+/**************************/
+
+@media (max-width: 34em) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
