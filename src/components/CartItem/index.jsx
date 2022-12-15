@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addItem, minusItem, removeItem } from "../../redux/slices/cartSlice";
 
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle, AiOutlineCloseCircle } from "react-icons/ai";
 
 import styles from "./CartItem.module.css";
 
@@ -40,19 +40,21 @@ const CartItem = ({ id, imageUrl, title, author, price, count }) => {
         <AiOutlineMinusCircle
           onClick={onClickMinus}
           className={styles.minus}
-          size="3.2rem"
+          size="3rem"
         />
         <span>{count}</span>
         <AiOutlinePlusCircle
           onClick={onClickPLus}
           className={styles.plus}
-          size="3.2rem"
+          size="3rem"
         />
       </div>
       <div className={styles.item_price}>
         <span>{price * count} &#8381;</span>
       </div>
-      <div onClick={onClickRemove} className={styles.item_remove}>remove</div>
+      <div onClick={onClickRemove} className={styles.item_remove}>
+        <AiOutlineCloseCircle size="2.4rem" className={styles.remove_icon} />
+      </div>
     </div>
   );
 };
