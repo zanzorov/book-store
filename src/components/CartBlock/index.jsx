@@ -6,8 +6,10 @@ import { clearItems } from "../../redux/slices/cartSlice";
 import { AiOutlineDelete, AiOutlineArrowLeft } from "react-icons/ai";
 
 import CartItem from "../CartItem";
+import CartEmpty from "../CartEmpty";
 
 import styles from "./CartBlock.module.css";
+
 
 const CartBlock = () => {
   const dispatch = useDispatch();
@@ -20,6 +22,10 @@ const CartBlock = () => {
       dispatch(clearItems());
     }
   };
+
+  if (!totalPrice) {
+    return <CartEmpty />;
+  }
 
   return (
     <div className={styles.section_cart}>
@@ -49,7 +55,7 @@ const CartBlock = () => {
             </div>
             <div className={styles.cart_bottom__buttons}>
               <Link to="/" className={styles.back_home_link}>
-              <AiOutlineArrowLeft className={styles.icon_arrow} />
+                <AiOutlineArrowLeft className={styles.icon_arrow} />
                 <span>Вернуться назад</span>
               </Link>
               <button className={styles.btn}>Оплатить сейчас</button>
