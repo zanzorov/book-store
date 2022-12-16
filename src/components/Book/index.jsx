@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
 
@@ -12,7 +12,8 @@ const style = {
   height: "2rem",
 };
 
-const Book = ({ id, imageUrl, genre, title, author, price }) => {
+const Book = ({ id, imageUrl, genre, title, author, price, left }) => {
+  const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
   const cartItem = useSelector((state) =>
     state.cart.items.find((obj) => obj.id === id)
@@ -41,7 +42,12 @@ const Book = ({ id, imageUrl, genre, title, author, price }) => {
   return (
     <div className={styles.book_card}>
       <div className={styles.book_img_box}>
-        <img src={imageUrl} className={styles.book_img} alt="Great Gatsby" />
+        <img
+          onClick={() => setOpenModal(!openModal)}
+          src={imageUrl}
+          className={styles.book_img}
+          alt="Great Gatsby"
+        />
       </div>
 
       <div className={styles.book_content}>
@@ -50,8 +56,12 @@ const Book = ({ id, imageUrl, genre, title, author, price }) => {
         <p className={styles.book_author}>{author}</p>
         <div className={styles.price_and_btn}>
           <span className={styles.book_price}>{price} &#8381;</span>
-          <button onClick={onClickAdd} className={styles.btn}>
-            Добавить
+          <button
+            disabled={left ? false : true}
+            onClick={onClickAdd}
+            className={left ? styles.btn : styles.btn_disabled}
+          >
+            {left ? "Добавить" : "Нет в наличии"}
             <span>
               <AiOutlineShoppingCart style={style} />
             </span>
