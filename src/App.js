@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import BookPage from "./pages/BookPage";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/book/:id" element={<BookPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
