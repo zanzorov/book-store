@@ -35,11 +35,6 @@
 
 .book_content {
   padding: 2.4rem 0 2.4rem 0;
-
-  /* next lines are added */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   margin-top: auto;
 }
 
@@ -55,6 +50,10 @@
   font-weight: 600;
 }
 
+.title_link {
+  text-decoration: none;
+}
+
 .book_title {
   font-size: 1.8rem;
   color: #333;
@@ -62,8 +61,6 @@
   margin: 1.6rem 0 0.8rem 0;
   cursor: pointer;
   transition: all 0.3s;
-  /* next lines are added */
-  /* text-align: center; */
 }
 
 .book_title:hover {
@@ -73,8 +70,6 @@
 .book_author {
   font-size: 1.4rem;
   margin-bottom: 1.6rem;
-  /* next lines are added */
-  /* text-align: center; */
 }
 
 .price_and_btn {

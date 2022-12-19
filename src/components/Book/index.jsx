@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
 
@@ -13,7 +14,6 @@ const style = {
 };
 
 const Book = ({ id, imageUrl, genre, title, author, price, left }) => {
-  const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
   const cartItem = useSelector((state) =>
     state.cart.items.find((obj) => obj.id === id)
@@ -41,18 +41,18 @@ const Book = ({ id, imageUrl, genre, title, author, price, left }) => {
 
   return (
     <div className={styles.book_card}>
-      <div className={styles.book_img_box}>
-        <img
-          onClick={() => setOpenModal(!openModal)}
-          src={imageUrl}
-          className={styles.book_img}
-          alt="Great Gatsby"
-        />
-      </div>
+      <Link to={`/book/${id}`}>
+        <div className={styles.book_img_box}>
+          <img src={imageUrl} className={styles.book_img} alt="book img" />
+        </div>
+      </Link>
 
       <div className={styles.book_content}>
         <span className={styles.tag_genre}>{genre}</span>
-        <p className={styles.book_title}>{cutTitle}</p>
+        <Link to={`/book/${id}`} className={styles.title_link}>
+          <p className={styles.book_title}>{cutTitle}</p>
+        </Link>
+
         <p className={styles.book_author}>{author}</p>
         <div className={styles.price_and_btn}>
           <span className={styles.book_price}>{price} &#8381;</span>
