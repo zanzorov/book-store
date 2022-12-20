@@ -13,7 +13,7 @@ const style = {
   height: "2rem",
 };
 
-const Book = ({ id, imageUrl, genre, title, author, price, left }) => {
+const Book = ({ id, imageUrl, genre, title, author, price, left, seller }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector((state) =>
     state.cart.items.find((obj) => obj.id === id)
@@ -49,6 +49,7 @@ const Book = ({ id, imageUrl, genre, title, author, price, left }) => {
 
       <div className={styles.book_content}>
         <span className={styles.tag_genre}>{genre}</span>
+        <span className={styles.tag_seller}>{seller}</span>
         <Link to={`/book/${id}`} className={styles.title_link}>
           <p className={styles.book_title}>{cutTitle}</p>
         </Link>
