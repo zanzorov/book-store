@@ -8,9 +8,12 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import BookPage from "./pages/BookPage";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <div className="wrapper">
+      <ScrollToTop />
       <Header />
       <main>
         <Routes>
